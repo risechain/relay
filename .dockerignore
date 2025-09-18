@@ -29,3 +29,5 @@
 !/migrations
 # include
 !/.sqlx
+
+!relay.yaml

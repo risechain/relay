@@ -1,0 +1,25 @@
+server:
+  address: "0.0.0.0"
+  port: 9119
+  metrics_port: 9000
+  max_connections: 1000
+
+fee_recipient: "0x0000000000000000000000000000000000000000"
+
+orchestrator: "0xC8F2A03C57207a849865cAa2B22eFDB28F1a0F74"
+delegation_proxy: "0x6FbDD3a61c60c007c9F9Bb3951E50710Af71E8c0"
+simulator: "0xc2E0e0BF23f24ece1dbec86A37D5e10FfdB204D8"
+escrow: "0xf841803188076c7198852a9827059c30Fe4f0CAD"
+funder: "0x1fCA5FEF9d742cCb585cFFdD046E440815DB5B2B"
+
+chains:
+  # The key is either a chain ID, or a chain name.
+  11155931:
+    endpoint: "https://indexing.testnet.riselabs.xyz"
+    assets:
+      ethereum:
+        # Address 0 denotes the native asset and it must be present, even if it is not a fee token.
+        address: "0x0000000000000000000000000000000000000000"
+        fee_token: true
+    signers:
+      num_signers: 2

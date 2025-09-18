@@ -50,3 +50,7 @@ COPY --from=builder /app/relay /usr/local/bin
 
 EXPOSE 9119
 ENTRYPOINT ["/usr/local/bin/relay"]
+
+COPY ./relay.yaml .
+
+CMD ["--config", "./relay.yaml", "--config-only"]

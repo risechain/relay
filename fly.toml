@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for rise-testnet-relay on 2025-09-17T18:43:45+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'rise-testnet-relay'
+primary_region = 'iad'
+
+[build]
+
+[env]
+  RUST_LOG = 'info,relay=debug'
+
+[http_service]
+  internal_port = 9119
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[[metrics]]
+  port = 9000
+  path = '/metrics'
